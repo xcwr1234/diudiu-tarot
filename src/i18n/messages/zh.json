@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "title": "丢丢塔罗 - 神秘塔罗牌占卜",
+    "description": "丢丢塔罗是一个专业的塔罗牌占卜平台，提供神秘而准确的塔罗牌解读服务。",
+    "keywords": "丢丢塔罗, 塔罗牌, 占卜, 神秘学"
+  },
+  "user": {
+    "sign_in": "登录",
+    "sign_out": "退出登录",
+    "credits": "额度",
+    "api_keys": "API 密钥",
+    "my_orders": "我的订单",
+    "user_center": "用户中心",
+    "admin_system": "管理后台"
+  },
+  "sign_modal": {
+    "sign_in_title": "登录",
+    "sign_in_description": "登录您的账户",
+    "sign_up_title": "注册",
+    "sign_up_description": "创建新账户",
+    "email_title": "邮箱",
+    "email_placeholder": "请输入您的邮箱",
+    "password_title": "密码",
+    "password_placeholder": "请输入您的密码",
+    "forgot_password": "忘记密码？",
+    "or": "或",
+    "continue": "继续",
+    "no_account": "还没有账户？",
+    "email_sign_in": "使用邮箱登录",
+    "google_sign_in": "使用 Google 登录",
+    "github_sign_in": "使用 GitHub 登录",
+    "close_title": "关闭",
+    "cancel_title": "取消"
+  },
+  "my_orders": {
+    "title": "我的订单",
+    "description": "在 ShipAny 上购买的订单。",
+    "no_orders": "未找到订单",
+    "tip": "",
+    "activate_order": "激活订单",
+    "actived": "已激活",
+    "join_discord": "加入 Discord",
+    "read_docs": "阅读文档",
+    "table": {
+      "order_no": "订单号",
+      "email": "邮箱",
+      "product_name": "产品名称",
+      "amount": "金额",
+      "paid_at": "支付时间",
+      "github_username": "GitHub 用户名",
+      "status": "状态"
+    }
+  },
+  "my_credits": {
+    "title": "我的积分",
+    "left_tip": "剩余积分: {left_credits}",
+    "no_credits": "没有积分记录",
+    "recharge": "充值",
+    "table": {
+      "trans_no": "交易号",
+      "trans_type": "交易类型",
+      "credits": "积分",
+      "updated_at": "更新时间",
+      "status": "状态"
+    }
+  },
+  "api_keys": {
+    "title": "API 密钥",
+    "tip": "请妥善保管您的 API 密钥，避免泄露",
+    "no_api_keys": "没有 API 密钥",
+    "create_api_key": "创建 API 密钥",
+    "table": {
+      "name": "名称",
+      "key": "密钥",
+      "created_at": "创建时间"
+    },
+    "form": {
+      "name": "名称",
+      "name_placeholder": "API 密钥名称",
+      "submit": "提交"
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "description": "关于 ShipAny 的新闻、资源和更新",
+    "read_more_text": "阅读更多"
+  },
+  "my_invites": {
+    "title": "我的邀请",
+    "description": "查看您的邀请记录",
+    "no_invites": "未找到邀请记录",
+    "my_invite_link": "我的邀请链接",
+    "edit_invite_link": "编辑邀请链接",
+    "copy_invite_link": "复制邀请链接",
+    "invite_code": "邀请码",
+    "invite_tip": "每邀请 1 位朋友购买 ShipAny，奖励 $50。",
+    "invite_balance": "邀请奖励余额",
+    "total_invite_count": "总邀请人数",
+    "total_paid_count": "已充值人数",
+    "total_award_amount": "总奖励金额",
+    "update_invite_code": "设置邀请码",
+    "update_invite_code_tip": "输入你的自定义邀请码",
+    "update_invite_button": "保存",
+    "no_orders": "你需要先购买过 ShipAny 才能邀请朋友",
+    "no_affiliates": "你暂无邀请朋友的权限，请联系我们申请开通。",
+    "table": {
+      "invite_time": "邀请时间",
+      "invite_user": "邀请用户",
+      "status": "状态",
+      "reward_percent": "奖励比例",
+      "reward_amount": "奖励金额",
+      "pending": "已注册，未支付",
+      "completed": "已支付"
+    }
+  },
+  "feedback": {
+    "title": "反馈",
+    "description": "我们很乐意听取您对产品的看法或如何改进产品体验。",
+    "submit": "提交",
+    "loading": "提交中...",
+    "contact_tip": "其他联系方式",
+    "rating_tip": "您对 ShipAny 的看法如何？",
+    "placeholder": "在这里留下您的反馈..."
+  },
+  "landing": {
+    "hero": {
+      "title": "🔮 神秘塔罗占卜",
+      "subtitle": "通过古老智慧和神圣指引发现你的命运",
+      "description": "体验真实的塔罗占卜，AI驱动的深度解读。选择传统马赛、维特、头特和黄金黎明牌组，获得个性化的灵性洞察。",
+      "cta_primary": "开始你的占卜",
+      "cta_secondary": "了解更多",
+      "features": [
+        "AI驱动解读",
+        "多种传统牌组",
+        "专业占卜阵",
+        "即时结果"
+      ]
+    },
+    "features": {
+      "title": "为什么选择我们的塔罗服务",
+      "subtitle": "体验最真实和深刻的塔罗占卜",
+      "items": [
+        {
+          "title": "古老智慧",
+          "description": "获取传承数世纪的塔罗传统和神秘知识。",
+          "icon": "crystal-ball"
+        },
+        {
+          "title": "AI解读",
+          "description": "先进AI技术为你的占卜提供深度个性化解读。",
+          "icon": "sparkles"
+        },
+        {
+          "title": "多种牌组",
+          "description": "选择马赛、维特、头特和黄金黎明牌组，获得不同视角。",
+          "icon": "cards"
+        },
+        {
+          "title": "专业占卜阵",
+          "description": "使用传统和现代塔罗占卜阵进行全面解读。",
+          "icon": "layout"
+        },
+        {
+          "title": "即时结果",
+          "description": "几秒钟内获得完整的占卜结果和详细解读。",
+          "icon": "zap"
+        },
+        {
+          "title": "隐私保护",
+          "description": "你的问题和占卜结果完全私密安全。",
+          "icon": "shield"
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备好发现你的命运了吗？",
+      "subtitle": "加入数千名通过我们塔罗占卜找到指引的寻求者",
+      "description": "今天就开始你的灵性之旅，解锁卡牌的智慧。",
+      "cta_primary": "开始免费占卜",
+      "cta_secondary": "查看所有牌组"
+    }
+  },
+  "tarot": {
+    "title": "🔮 塔罗牌占卜",
+    "subtitle": "选择你的牌组、占卜方式，提出问题获得神圣指引",
+    "start_reading": "开始你的占卜",
+    "start_reading_desc": "选择你喜欢的牌组和占卜方式，然后提出你的问题",
+    "deck_type": "牌组类型",
+    "select_deck": "选择你的牌组",
+    "spread_type": "占卜方式",
+    "select_spread": "选择占卜方式",
+    "your_question": "你的问题",
+    "question_placeholder": "在这里提出你的问题... (例如：我的未来会怎样？)",
+    "begin_reading": "开始占卜",
+    "reading_cards": "正在解读卡片...",
+    "your_reading": "你的占卜",
+    "question": "问题",
+    "reveal_card": "揭示卡片",
+    "upright": "正位",
+    "reversed": "逆位",
+    "major_arcana": "大阿卡纳",
+    "suit": "小阿卡纳",
+    "ai_interpretation": "AI深度解读",
+    "ai_interpretation_failed": "AI解读失败",
+    "new_reading": "新的占卜",
+    "card_names": {
+      "The Fool": "愚者",
+      "The Magician": "魔术师",
+      "The High Priestess": "女祭司",
+      "The Empress": "女皇",
+      "The Emperor": "皇帝",
+      "The Hierophant": "教皇",
+      "The Lovers": "恋人",
+      "The Chariot": "战车",
+      "Strength": "力量",
+      "The Hermit": "隐者",
+      "Wheel of Fortune": "命运之轮",
+      "Justice": "正义",
+      "The Hanged Man": "倒吊人",
+      "Death": "死神",
+      "Temperance": "节制",
+      "The Devil": "恶魔",
+      "The Tower": "塔",
+      "The Star": "星星",
+      "The Moon": "月亮",
+      "The Sun": "太阳",
+      "Judgement": "审判",
+      "The World": "世界"
+    },
+    "deck_types": {
+      "marseille": "马赛塔罗",
+      "marseille_desc": "传统法国符号系统",
+      "golden_dawn": "黄金黎明",
+      "golden_dawn_desc": "赫尔墨斯卡巴拉对应关系",
+      "waite": "维特塔罗",
+      "waite_desc": "经典图像和象征主义",
+      "thoth": "头特塔罗",
+      "thoth_desc": "克劳利的密教智慧"
+    },
+    "spread_types": {
+      "marseille": {
+        "three_card_time": "三牌时间流",
+        "three_card_time_desc": "过去、现在、未来 - 快速查看事件发展",
+        "yes_no": "是/否问题阵",
+        "yes_no_desc": "简单二元问题",
+        "decision_cross": "十字决策阵",
+        "decision_cross_desc": "二选一决策",
+        "seven_day": "七日运势阵",
+        "seven_day_desc": "预测一周能量变化",
+        "relationship_mirror": "人物关系阵",
+        "relationship_mirror_desc": "分析两人互动",
+        "problem_solving": "问题解决阵",
+        "problem_solving_desc": "寻找困境的突破点",
+        "elemental_balance": "四元素平衡阵",
+        "elemental_balance_desc": "检查生活各领域状态",
+        "marseille_pentacle": "马赛五角星阵",
+        "marseille_pentacle_desc": "综合能量分析"
+      },
+      "waite": {
+        "celtic_cross": "凯尔特十字",
+        "celtic_cross_desc": "全能牌阵，适合任何复杂问题",
+        "love_relationship": "关系深度阵",
+        "love_relationship_desc": "分析感情或合作关系",
+        "career_path": "职业路径阵",
+        "career_path_desc": "探索职业方向",
+        "healing": "心灵疗愈阵",
+        "healing_desc": "心理创伤或情绪疏导",
+        "seasonal_forecast": "四季预测阵",
+        "seasonal_forecast_desc": "季度或年度规划",
+        "two_paths": "选择对比阵",
+        "two_paths_desc": "比较两个选择的优劣",
+        "dream_interpretation": "梦境解析阵",
+        "dream_interpretation_desc": "解读梦境象征",
+        "money_flow": "财富流阵",
+        "money_flow_desc": "财务规划或投资建议"
+      },
+      "thoth": {
+        "tree_of_life": "生命之树阵",
+        "tree_of_life_desc": "高阶灵性成长分析",
+        "hexagram": "六芒星能量阵",
+        "hexagram_desc": "能量平衡与魔法仪式准备",
+        "planetary_influence": "行星影响阵",
+        "planetary_influence_desc": "检查行星对当前问题的影响",
+        "elemental_invocation": "元素召唤阵",
+        "elemental_invocation_desc": "调整个人能量场",
+        "crowley_triad": "克劳利三阶阵",
+        "crowley_triad_desc": "问题、解决方案、最终结果",
+        "wheel_of_aeon": "永世之轮阵",
+        "wheel_of_aeon_desc": "长期命运周期分析",
+        "thoth_cross": "透特十字阵",
+        "thoth_cross_desc": "替代凯尔特十字，更抽象",
+        "spiritual_awakening": "灵性觉醒阵",
+        "spiritual_awakening_desc": "修行者自我提升"
+      },
+      "golden_dawn": {
+        "pentagram_ritual": "五芒星仪式阵",
+        "pentagram_ritual_desc": "魔法仪式中的能量引导",
+        "planetary_days": "行星七日阵",
+        "planetary_days_desc": "一周能量调整",
+        "hga_communication": "守护天使阵",
+        "hga_communication_desc": "与高阶自我沟通",
+        "three_pillars": "三柱智慧阵",
+        "three_pillars_desc": "修行进度评估",
+        "pathworking": "卡巴拉路径阵",
+        "pathworking_desc": "探索生命之树的路径",
+        "elemental_evocation": "元素召唤阵",
+        "elemental_evocation_desc": "召唤特定元素力量",
+        "gd_cross": "黄金黎明十字阵",
+        "gd_cross_desc": "替代凯尔特十字，更符号化",
+        "lunar_phase": "月相占卜阵",
+        "lunar_phase_desc": "新月/满月仪式规划"
+      }
+    }
+  }
+}

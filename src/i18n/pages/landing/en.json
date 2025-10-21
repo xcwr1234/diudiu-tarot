@@ -1,0 +1,458 @@
+{
+  "template": "arcanum-template-one",
+  "theme": "mystic",
+  "header": {
+    "brand": {
+      "title": "DiuDiu Tarot",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "DiuDiu Tarot"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "About DiuDiu",
+          "url": "/about",
+          "icon": "RiInformationLine"
+        },
+        {
+          "title": "Divination",
+          "url": "/divination",
+          "icon": "RiMagicLine"
+        },
+        {
+          "title": "Hermetic Wisdom",
+          "url": "/hermetic",
+          "icon": "RiScales3Line"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "Tarot Reading",
+        "url": "/tarot",
+        "target": "_self",
+        "variant": "link",
+        "icon": "RiHandHeartLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "DiuDiu Tarot",
+    "highlight_text": "DiuDiu Tarot",
+    "description": "Pierce the veil of 78 cards to reveal hidden paths of destiny.<br/>Blending Marseille tradition, Golden Dawn system and Crowley's Thoth wisdom.",
+    "announcement": {
+      "label": "2025",
+      "title": "🜁 Year of Air Signs",
+      "url": "/#divination"
+    },
+    "tip": "🜄 Mercury Retrograde Special Reading",
+    "buttons": [
+      {
+        "title": "Begin Reading",
+        "icon": "RiStackLine",
+        "url": "/tarot",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "Join Our Circle",
+        "icon": "RiKey2Line",
+        "url": "https://discord.gg/HermeticCircle",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": true,
+    "show_badge": false
+  },
+  "branding": {
+    "title": "DiuDiu Tarot Unites Four Esoteric Traditions",
+    "items": [
+      {
+        "title": "Marseille Tarot",
+        "image": {
+          "src": "/imgs/logos/marseille.png",
+          "alt": "Marseille Tarot"
+        }
+      },
+      {
+        "title": "Golden Dawn",
+        "image": {
+          "src": "/imgs/logos/golden-dawn.png",
+          "alt": "Golden Dawn"
+        }
+      },
+      {
+        "title": "Rider-Waite",
+        "image": {
+          "src": "/imgs/logos/waite.png",
+          "alt": "Rider-Waite Tarot"
+        }
+      },
+      {
+        "title": "Thoth Tarot",
+        "image": {
+          "src": "/imgs/logos/thoth.png",
+          "alt": "Thoth Tarot"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "What is Arcanum",
+    "label": "Major Arcana",
+    "description": "Arcanum is a digital divination system blending four tarot traditions, using algorithms to simulate esoteric resonance and reveal hidden paths on the Tree of Life.",
+    "image": {
+      "src": "/imgs/arcana/1.png"
+    },
+    "items": [
+      {
+        "title": "Marseille Tradition",
+        "description": "Following the original 15th century French symbolic system preserving numerical essence",
+        "icon": "RiAncientPavilionLine"
+      },
+      {
+        "title": "Golden Dawn Rituals",
+        "description": "Integrating Hermetic Qabalah correspondences and elemental ceremonies",
+        "icon": "RiFlaskLine"
+      },
+      {
+        "title": "Crowley's Thoth Wisdom",
+        "description": "Combining Aleister Crowley's occult philosophy with Egyptian mysticism",
+        "icon": "RiEye2Line"
+      }
+    ]
+  },
+  "benefit": {
+    "name": "benefit",
+    "title": "Why Choose Arcanum",
+    "label": "Wheel of Fortune",
+    "description": "Unlike ordinary readings, Arcanum interprets spreads through multiple esoteric lenses for multidimensional spiritual guidance.",
+    "items": [
+      {
+        "title": "Quadruple Interpretation",
+        "description": "Each card reveals Marseille symbols, Golden Dawn correspondences, Waite imagery and Thoth philosophy simultaneously",
+        "icon": "RiLayersLine",
+        "image": {
+          "src": "/imgs/arcana/2.png"
+        }
+      },
+      {
+        "title": "Planetary Alignment",
+        "description": "Real-time cosmic adjustments for Mercury retrograde and other astrological influences",
+        "icon": "RiPlanetLine",
+        "image": {
+          "src": "/imgs/arcana/3.png"
+        }
+      },
+      {
+        "title": "Personal Deck Connection",
+        "description": "Initial questionnaire establishes energetic resonance with your personal deck spirit",
+        "icon": "RiPsychotherapyLine",
+        "image": {
+          "src": "/imgs/arcana/4.png"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "How to Begin Your Divination Ritual",
+    "description": "Three sacred steps for digital divination following ancient traditions:",
+    "image": {
+      "src": "/imgs/arcana/5.png"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "Purify Your Space",
+        "description": "Light a virtual white candle and cleanse your aura through breathwork",
+        "image": {
+          "src": "/imgs/arcana/6.png"
+        }
+      },
+      {
+        "title": "Formulate Questions",
+        "description": "Clearly frame your inquiry, preferably as open-ended questions",
+        "image": {
+          "src": "/imgs/arcana/7.png"
+        }
+      },
+      {
+        "title": "Card Drawing Ceremony",
+        "description": "Select appropriate spread (Celtic Cross, 3-Card, etc.) and draw with focus",
+        "image": {
+          "src": "/imgs/arcana/8.png"
+        }
+      },
+      {
+        "title": "Record Revelations",
+        "description": "Save results to your spiritual journal and track manifestations",
+        "image": {
+          "src": "/imgs/arcana/9.png"
+        }
+      }
+    ]
+  },
+  "feature": {
+    "name": "feature",
+    "title": "Arcanum Core Features",
+    "description": "Professional tools for serious diviners and spiritual seekers",
+    "items": [
+      {
+        "title": "Multi-Deck Library",
+        "description": "Switch seamlessly between Marseille, Waite, Thoth and other deck styles",
+        "icon": "RiPaletteLine"
+      },
+      {
+        "title": "Divination Journal",
+        "description": "Log each reading's time, questions and outcomes to track accuracy",
+        "icon": "RiBook2Line"
+      },
+      {
+        "title": "Qabalistic Analysis",
+        "description": "Automatic mapping of spreads to Tree of Life paths and Sephiroth",
+        "icon": "RiNodeTree"
+      },
+      {
+        "title": "Planetary Hours",
+        "description": "Display current planetary positions and aspects affecting readings",
+        "icon": "RiTimeLine"
+      },
+      {
+        "title": "Reversed Meanings",
+        "description": "Intelligent reversal detection with Golden Dawn inversion differences",
+        "icon": "RiExchangeLine"
+      },
+      {
+        "title": "Symbol Lexicon",
+        "description": "Instant reference for alchemical symbols, Hebrew letters and occult sigils",
+        "icon": "RiCharacterRecognitionLine"
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "Sacred Numerology",
+    "title": "Arcanum's Mystical Numbers",
+    "description": "These sacred numbers reveal our shared journey",
+    "icon": "RiNumbersLine",
+    "items": [
+      {
+        "title": "Souls Guided",
+        "label": "888+",
+        "description": "Seekers"
+      },
+      {
+        "title": "Spread Variations",
+        "label": "22+",
+        "description": "Major Arcana"
+      },
+      {
+        "title": "Accuracy Rate",
+        "label": "78%",
+        "description": "User Reports"
+      }
+    ]
+  },
+  "pricing": {
+    "disabled": true
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "Spiritual Testimonials",
+    "title": "Seekers' Sacred Experiences",
+    "description": "Hear from souls who received revelations through Arcanum",
+    "icon": "RiQuillPenLine",
+    "items": [
+      {
+        "title": "The Hermit's Path",
+        "label": "Tarot Adept",
+        "description": "Arcanum's quadruple interpretation showed me both a card's numerical essence in Marseille tradition and its Qabalistic correspondence - this multidimensional approach revolutionized my readings.",
+        "image": {
+          "src": "/imgs/users/1.png"
+        }
+      },
+      {
+        "title": "High Priestess Awakening",
+        "label": "Occult Researcher",
+        "description": "When my Mercury retrograde reading automatically flagged planetary warnings, I finally understood why my business decisions kept failing - the cosmic energy explanation revealed everything.",
+        "image": {
+          "src": "/imgs/users/2.png"
+        }
+      },
+      {
+        "title": "The Magician",
+        "label": "Ritual Practitioner",
+        "description": "Through Arcanum's Qabalistic path analysis, I discovered my relationship challenges actually reflected a Tiphareth-to-Geburah initiation on the Tree of Life - this insight redirected my spiritual practice.",
+        "image": {
+          "src": "/imgs/users/3.png"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "name": "faq",
+    "label": "Wheel of Fortune",
+    "title": "Frequently Asked Mystical Questions",
+    "description": "More questions? Join our Hermetic study group.",
+    "items": [
+      {
+        "title": "How does digital divination differ from physical tarot?",
+        "description": "Arcanum simulates esoteric resonance through algorithms, with all digital rituals following Golden Dawn purification protocols. We use quantum-random number generators to simulate shuffling enhanced by biometric resonance."
+      },
+      {
+        "title": "How to ensure reading accuracy?",
+        "description": "We recommend performing readings in quiet spaces after brief meditative cleansing. The system automatically suggests optimal spreads (Celtic Cross for complex matters, 3-Card for short-term guidance) based on your question type."
+      },
+      {
+        "title": "Which tarot system should I choose?",
+        "description": "Marseille excels for numerical symbolism; Rider-Waite's imagery aids beginners; Thoth offers depth for magicians; Golden Dawn integrates Qabalistic wisdom. Arcanum lets you compare interpretations across systems for the same question."
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "Begin Your Fate Journey",
+    "description": "Let 78 cards illuminate your life path",
+    "buttons": [
+      {
+        "title": "Read Now",
+        "url": "https://arcanum.ai",
+        "target": "_blank",
+        "icon": "RiHandHeartLine"
+      },
+      {
+        "title": "Study Mysteries",
+        "url": "https://docs.arcanum.ai",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "brand": {
+      "title": "Arcanum",
+      "description": "Digital mysticism platform blending Marseille, Golden Dawn, Waite and Thoth traditions",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Arcanum"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2025 • Arcanum All Mystical Rights Reserved",
+    "nav": {
+      "items": [
+        {
+          "title": "Paths of Wisdom",
+          "children": [
+            {
+              "title": "Major Arcana",
+              "url": "/#arcana",
+              "target": "_self"
+            },
+            {
+              "title": "Minor Arcana",
+              "url": "/#minor-arcana",
+              "target": "_self"
+            },
+            {
+              "title": "Court Cards",
+              "url": "/#court-cards",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Esoteric Studies",
+          "children": [
+            {
+              "title": "Qabalah",
+              "url": "https://docs.arcanum.ai/qabalah",
+              "target": "_blank"
+            },
+            {
+              "title": "Alchemical Symbols",
+              "url": "https://docs.arcanum.ai/alchemy",
+              "target": "_blank"
+            },
+            {
+              "title": "Astrological Correspondences",
+              "url": "https://docs.arcanum.ai/astrology",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "title": "Mystical Allies",
+          "children": [
+            {
+              "title": "Hermetic Academy",
+              "url": "https://hermetic.academy",
+              "target": "_blank"
+            },
+            {
+              "title": "Golden Dawn",
+              "url": "https://golden-dawn.com",
+              "target": "_blank"
+            },
+            {
+              "title": "Thoth Legacy",
+              "url": "https://thoth-legacy.org",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Mystical Twitter",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/arcanum_tarot",
+          "target": "_blank"
+        },
+        {
+          "title": "GitMagick",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/arcanum-magick",
+          "target": "_blank"
+        },
+        {
+          "title": "Occult Forum",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/HermeticCircle",
+          "target": "_blank"
+        },
+        {
+          "title": "Owl Messenger",
+          "icon": "RiMailLine",
+          "url": "mailto:owl@arcanum.ai",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Covenant",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Initiation",
+          "url": "/terms-of-service"
+        }
+      ]
+    }
+  }
+}

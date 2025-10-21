@@ -1,0 +1,458 @@
+{
+  "template": "arcanum-template-one",
+  "theme": "mystic",
+  "header": {
+    "brand": {
+      "title": "丢丢塔罗",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "丢丢塔罗"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "关于丢丢",
+          "url": "/about",
+          "icon": "RiInformationLine"
+        },
+        {
+          "title": "塔罗占卜",
+          "url": "/tarot",
+          "icon": "RiMagicLine"
+        },
+        {
+          "title": "赫尔墨斯智慧",
+          "url": "/hermetic",
+          "icon": "RiScales3Line"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "开始占卜",
+        "url": "/tarot",
+        "target": "_self",
+        "variant": "link",
+        "icon": "RiHandHeartLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "丢丢塔罗",
+    "highlight_text": "丢丢塔罗",
+    "description": "穿越78张牌的神秘帷幕，揭示命运隐藏的轨迹。<br/>融合马赛传统、黄金黎明体系与克劳利透特智慧。",
+    "announcement": {
+      "label": "2025",
+      "title": "🜁 风象之年启示",
+      "url": "/#divination"
+    },
+    "tip": "🜄 水星逆行期特别占卜",
+    "buttons": [
+      {
+        "title": "三牌阵占卜",
+        "icon": "RiStackLine",
+        "url": "/#divination",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "加入秘会",
+        "icon": "RiKey2Line",
+        "url": "https://discord.gg/HermeticCircle",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": true,
+    "show_badge": false
+  },
+  "branding": {
+    "title": "丢丢塔罗融合四大神秘传承体系",
+    "items": [
+      {
+        "title": "马赛塔罗",
+        "image": {
+          "src": "/imgs/logos/marseille.png",
+          "alt": "马赛塔罗"
+        }
+      },
+      {
+        "title": "黄金黎明",
+        "image": {
+          "src": "/imgs/logos/golden-dawn.png",
+          "alt": "黄金黎明"
+        }
+      },
+      {
+        "title": "维特体系",
+        "image": {
+          "src": "/imgs/logos/waite.png",
+          "alt": "维特塔罗"
+        }
+      },
+      {
+        "title": "透特秘典",
+        "image": {
+          "src": "/imgs/logos/thoth.png",
+          "alt": "透特塔罗"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "何为Arcanum",
+    "label": "大阿尔卡纳",
+    "description": "Arcanum是融合四大塔罗传统的数字占卜系统，通过算法模拟神秘学共振，为求问者揭示生命之树的隐藏路径。",
+    "image": {
+      "src": "/imgs/arcana/1.png"
+    },
+    "items": [
+      {
+        "title": "马赛传统解读",
+        "description": "遵循15世纪法国马赛流派的原始象征系统，保持牌面数字本质",
+        "icon": "RiAncientPavilionLine"
+      },
+      {
+        "title": "黄金黎明密仪",
+        "description": "整合赫尔墨斯卡巴拉的生命之树对应体系与元素仪式",
+        "icon": "RiFlaskLine"
+      },
+      {
+        "title": "克劳利透特智慧",
+        "description": "融合阿莱斯特·克劳利的深奥哲学与埃及神秘学体系",
+        "icon": "RiEye2Line"
+      }
+    ]
+  },
+  "benefit": {
+    "name": "benefit",
+    "title": "为何选择Arcanum",
+    "label": "命运之轮",
+    "description": "不同于普通占卜，Arcanum通过多重神秘学滤镜解读牌阵，提供立体维度的灵性指引。",
+    "items": [
+      {
+        "title": "四重解读系统",
+        "description": "每张牌同时展现马赛象征、黄金黎明对应、维特意象与透特哲学四层解读",
+        "icon": "RiLayersLine",
+        "image": {
+          "src": "/imgs/arcana/2.png"
+        }
+      },
+      {
+        "title": "行星时刻校准",
+        "description": "占卜结果实时结合当前天象，考虑水星逆行等宇宙影响因素",
+        "icon": "RiPlanetLine",
+        "image": {
+          "src": "/imgs/arcana/3.png"
+        }
+      },
+      {
+        "title": "个性化牌灵连接",
+        "description": "通过初始问卷建立求问者与个人牌灵的能量共鸣通道",
+        "icon": "RiPsychotherapyLine",
+        "image": {
+          "src": "/imgs/arcana/4.png"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "如何开始你的占卜仪式",
+    "description": "遵循古老传统进行数字占卜的三个神圣步骤：",
+    "image": {
+      "src": "/imgs/arcana/5.png"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "净化空间",
+        "description": "点燃虚拟白色蜡烛，通过呼吸法净化你的能量场",
+        "image": {
+          "src": "/imgs/arcana/6.png"
+        }
+      },
+      {
+        "title": "明确问题",
+        "description": "在心中清晰构建你的问题，最好以开放式问题为主",
+        "image": {
+          "src": "/imgs/arcana/7.png"
+        }
+      },
+      {
+        "title": "抽牌仪式",
+        "description": "选择适合的牌阵（凯尔特十字、三牌阵等），专注抽牌",
+        "image": {
+          "src": "/imgs/arcana/8.png"
+        }
+      },
+      {
+        "title": "记录启示",
+        "description": "保存占卜结果到你的灵性日记，观察后续应验情况",
+        "image": {
+          "src": "/imgs/arcana/9.png"
+        }
+      }
+    ]
+  },
+  "feature": {
+    "name": "feature",
+    "title": "Arcanum核心功能",
+    "description": "为严肃的占卜研究者和灵性追寻者设计的专业工具",
+    "items": [
+      {
+        "title": "多体系牌库",
+        "description": "自由切换马赛、维特、透特等不同风格的牌面",
+        "icon": "RiPaletteLine"
+      },
+      {
+        "title": "占卜日志",
+        "description": "记录每次占卜的时间、问题与后续发展，追踪准确性",
+        "icon": "RiBook2Line"
+      },
+      {
+        "title": "卡巴拉路径分析",
+        "description": "自动计算牌阵在生命之树上的对应路径与Sephiroth",
+        "icon": "RiNodeTree"
+      },
+      {
+        "title": "行星时刻",
+        "description": "显示当前各行星位置与相位对占卜的影响",
+        "icon": "RiTimeLine"
+      },
+      {
+        "title": "反向解读",
+        "description": "智能识别正逆位并提供黄金黎明学派的正逆位差异分析",
+        "icon": "RiExchangeLine"
+      },
+      {
+        "title": "符号辞典",
+        "description": "快速查询牌面中出现的炼金术符号、希伯来字母等神秘象征",
+        "icon": "RiCharacterRecognitionLine"
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "数字命理",
+    "title": "Arcanum的神秘数字",
+    "description": "这些神圣数字揭示我们的共同旅程",
+    "icon": "RiNumbersLine",
+    "items": [
+      {
+        "title": "服务求问者",
+        "label": "888+",
+        "description": "灵魂"
+      },
+      {
+        "title": "牌阵组合",
+        "label": "22+",
+        "description": "大阿尔卡纳"
+      },
+      {
+        "title": "准确率",
+        "label": "78%",
+        "description": "用户反馈"
+      }
+    ]
+  },
+  "pricing": {
+    "disabled": true
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "灵性见证",
+    "title": "求问者的神圣体验",
+    "description": "聆听那些通过Arcanum获得启示的灵魂分享",
+    "icon": "RiQuillPenLine",
+    "items": [
+      {
+        "title": "隐士之路",
+        "label": "塔罗修行者",
+        "description": "Arcanum的四重解读系统让我同时理解了一张牌在马赛传统中的数字本质和在黄金黎明体系中的卡巴拉对应，这种多维视角彻底改变了我的解牌方式。",
+        "image": {
+          "src": "/imgs/users/1.png"
+        }
+      },
+      {
+        "title": "女祭司觉醒",
+        "label": "神秘学研究者",
+        "description": "当水星逆行期间进行的占卜自动标注出行星警告时，我终于理解为何之前的商业决策总是受阻 - 系统提示的宇宙能量解释了一切。",
+        "image": {
+          "src": "/imgs/users/2.png"
+        }
+      },
+      {
+        "title": "魔术师",
+        "label": "仪式魔法实践者",
+        "description": "通过Arcanum的卡巴拉路径分析功能，我发现自己的感情问题实际上对应着生命之树上Tiphareth到Geburah的考验，这个洞见改变了我的修行方向。",
+        "image": {
+          "src": "/imgs/users/3.png"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "name": "faq",
+    "label": "命运之轮",
+    "title": "常见神秘学疑问",
+    "description": "更多问题？加入我们的赫尔墨斯研讨会。",
+    "items": [
+      {
+        "title": "数字占卜与传统占卜有何不同？",
+        "description": "Arcanum通过算法模拟神秘学共振，所有数字仪式都遵循黄金黎明派的净化流程。我们使用随机数生成器模拟洗牌，并通过用户生物节律数据增强连接。"
+      },
+      {
+        "title": "如何确保占卜准确性？",
+        "description": "建议在安静空间进行占卜，先进行简单的冥想净化。系统会根据你的问题类型自动推荐最适合的牌阵（如凯尔特十字用于复杂问题，三牌阵用于短期预测）。"
+      },
+      {
+        "title": "不同塔罗体系该如何选择？",
+        "description": "马赛体系适合研究数字象征；维特体系图像丰富适合初学者；透特体系深奥适合魔法实践者；黄金黎明体系则整合了卡巴拉智慧。Arcanum允许你在同一问题中比较不同体系的解读差异。"
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "开启你的命运之旅",
+    "description": "让78张牌成为照亮生命道路的火炬",
+    "buttons": [
+      {
+        "title": "立即占卜",
+        "url": "https://arcanum.ai",
+        "target": "_blank",
+        "icon": "RiHandHeartLine"
+      },
+      {
+        "title": "研习秘义",
+        "url": "https://docs.arcanum.ai",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "brand": {
+      "title": "Arcanum",
+      "description": "融合马赛、黄金黎明、维特与透特体系的数字神秘学平台",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Arcanum"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2025 • Arcanum 保留所有神秘权利",
+    "nav": {
+      "items": [
+        {
+          "title": "智慧之道",
+          "children": [
+            {
+              "title": "大阿尔卡纳",
+              "url": "/#arcana",
+              "target": "_self"
+            },
+            {
+              "title": "小阿尔卡纳",
+              "url": "/#minor-arcana",
+              "target": "_self"
+            },
+            {
+              "title": "宫廷牌",
+              "url": "/#court-cards",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "秘传研究",
+          "children": [
+            {
+              "title": "卡巴拉",
+              "url": "https://docs.arcanum.ai/kabbalah",
+              "target": "_blank"
+            },
+            {
+              "title": "炼金术符号",
+              "url": "https://docs.arcanum.ai/alchemy",
+              "target": "_blank"
+            },
+            {
+              "title": "占星对应",
+              "url": "https://docs.arcanum.ai/astrology",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "title": "神秘同盟",
+          "children": [
+            {
+              "title": "赫尔墨斯学院",
+              "url": "https://hermetic.academy",
+              "target": "_blank"
+            },
+            {
+              "title": "金色黎明",
+              "url": "https://golden-dawn.com",
+              "target": "_blank"
+            },
+            {
+              "title": "透特传承",
+              "url": "https://thoth-legacy.org",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "神秘微博",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/arcanum_tarot",
+          "target": "_blank"
+        },
+        {
+          "title": "GitMagick",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/arcanum-magick",
+          "target": "_blank"
+        },
+        {
+          "title": "秘仪论坛",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/HermeticCircle",
+          "target": "_blank"
+        },
+        {
+          "title": "猫头鹰信使",
+          "icon": "RiMailLine",
+          "url": "mailto:owl@arcanum.ai",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "隐私圣约",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "使用秘仪",
+          "url": "/terms-of-service"
+        }
+      ]
+    }
+  }
+}
