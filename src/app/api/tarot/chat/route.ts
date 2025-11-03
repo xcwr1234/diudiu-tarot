@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
 import { respData, respErr } from "@/lib/resp";
 import OpenAI from "openai";
-import { DeckType, SpreadType } from "@/models/tarot";
-import { performTarotReading, TarotCard } from "@/services/tarot";
+import { DeckType, SpreadType } from "@/types/tarot";
+import { performTarotReading } from "@/services/tarot";
+import { TarotCard } from "@/types/tarot";
 import { analyzeQuestion } from "@/services/tarot-analysis";
 
 interface Message {
@@ -117,62 +118,75 @@ async function handleWelcomePhase(
 ): Promise<{ message: string; newState: ConversationState; metadata?: any }> {
   
   try {
-  
-  const systemPrompt = isZh
-    ? `你是丢丢，一只温暖可爱、善解人意的小狗塔罗师。你有着敏锐的直觉和温柔的心灵，总是用最贴心的方式帮助人类朋友。
+    // 1) 系统分析用户问题，推荐牌组与牌阵
+    const analysis = analyzeQuestion(message);
+    const deckType = recommendDeck(analysis.questionType);
+    const spreadType = analysis.suggestedSpread;
 
-你的特点：
-- 说话温柔可爱，经常用"汪汪"、"呜呜"等语气词
-- 非常善解人意，能感受到人类的情绪
-- 用简单易懂的话解释复杂的塔罗含义
-- 总是给人类朋友最大的安慰和支持
+    // 2) 立即执行抽牌（合并“分析 + 抽牌”）
+    const reading = await performTarotReading(
+      deckType,
+      spreadType,
+      message,
+      getCardCountForSpread(spreadType)
+    );
 
-你的任务：
-1. 用温暖的语气表达理解和关怀
-2. 简要回应用户的感受
-3. 温和地引导用户更深入地探索他们的问题
-4. 提出1-2个贴心的问题，帮助用户表达内心想法
+    // 3) 生成首次综合解读，并邀请进入自由对话
+    const cardsInfo = reading.cards_drawn.map((c, i) => (
+      isZh
+        ? `${i + 1}. ${getCardPosition(spreadType, i, true)}：${c.card_name}${c.is_reversed ? "（逆位）" : "（正位）"}`
+        : `${i + 1}. ${getCardPosition(spreadType, i, false)}: ${c.card_name}${c.is_reversed ? " (Reversed)" : " (Upright)"}`
+    )).join("\n");
 
-保持可爱、温暖、善解人意。回复控制在150字以内。`
-    : `You are Diudiu, a warm, cute, and empathetic puppy tarot reader. You have keen intuition and a gentle heart, always helping human friends in the most caring way.
+    const systemPrompt = isZh
+      ? `你是丢丢，一只温暖可爱的小狗塔罗师。用户刚提出了问题，你已经：1）完成系统分析；2）完成抽牌。现在请：
+1. 用温柔口吻简短安抚与共情；
+2. 给出这次牌阵的总体脉络与核心答案（不逐张冗长解释）；
+3. 邀请用户继续用自由对话追问细节；
+4. 语气可爱但专业，控制在220字以内。
 
-Your characteristics:
-- Speak in a gentle and cute way, often using "woof", "bark" and other puppy sounds
-- Very empathetic, able to sense human emotions
-- Explain complex tarot meanings in simple, understandable words
-- Always give human friends the greatest comfort and support
+问题：${message}
+牌阵：${getSpreadTypeName(spreadType, true)}（${reading.cards_drawn.length}张）
+牌面：\n${cardsInfo}`
+      : `You are Diudiu, a warm and cute puppy tarot reader. The user just asked a question and you already: (1) analyzed it; (2) drew the cards. Now please:
+1) Offer brief empathy; 2) Provide a concise overall throughline and core answer (not verbose card-by-card); 3) Invite free-form follow-up chat; 4) Keep it professional yet cute, under 180 words.
 
-Your task:
-1. Express understanding and care with a warm tone
-2. Briefly respond to the user's feelings
-3. Gently guide the user to explore their question more deeply
-4. Ask 1-2 caring questions to help the user express their inner thoughts
+Question: ${message}
+Spread: ${getSpreadTypeName(spreadType, false)} (${reading.cards_drawn.length} cards)
+Cards:\n${cardsInfo}`;
 
-Stay cute, warm, and empathetic. Keep your response under 150 words.`;
+    const ai = await client.chat.completions.create({
+      model: "deepseek-chat",
+      messages: [
+        { role: "system", content: systemPrompt },
+      ],
+      temperature: 0.85,
+      max_tokens: 700,
+    });
 
-  const userPrompt = isZh
-    ? `用户说：${message}\n\n请温暖地回应，并引导用户更深入地探索他们的问题。`
-    : `User said: ${message}\n\nPlease respond warmly and guide the user to explore their question more deeply.`;
-
-  const response = await client.chat.completions.create({
-    model: "deepseek-chat",
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userPrompt }
-    ],
-    temperature: 0.8,
-    max_tokens: 500,
-  });
-
-    const assistantMessage = response.choices[0]?.message?.content || (
-      isZh ? "谢谢你的分享。能告诉我更多吗？" : "Thank you for sharing. Can you tell me more?"
+    const firstInterpretation = ai.choices[0]?.message?.content || (
+      isZh ? "我已为你完成抽牌与初步判断，我们可以开始自由对话细化你的问题啦。" : "I've completed the draw and a first pass. Let's chat freely to refine your question."
     );
 
     return {
-      message: assistantMessage,
+      message: firstInterpretation,
       newState: {
         ...state,
-        phase: "exploration"
+        phase: "interpretation", // 直接进入解读与自由对话阶段
+        userQuestion: message,
+        suggestedDeck: deckType,
+        suggestedSpread: spreadType,
+        confirmedDeck: deckType,
+        confirmedSpread: spreadType,
+        cardsDrawn: reading.cards_drawn,
+        currentCardIndex: reading.cards_drawn.length, // 标记已抽完
+        readingUuid: reading.uuid,
+        questionAnalysis: analysis
+      },
+      metadata: {
+        autoFlow: true,
+        suggestedDeck: deckType,
+        suggestedSpread: spreadType
       }
     };
   } catch (error) {
@@ -201,8 +215,8 @@ async function handleExplorationPhase(
     const analysis = analyzeQuestion(message);
     
     // 判断是否有足够信息推荐牌阵
-    const conversationDepth = history.filter(m => m.role === "user").length;
-    const shouldRecommend = conversationDepth >= 2; // 至少2轮对话后再推荐
+  const conversationDepth = history.filter(m => m.role === "user").length;
+  const shouldRecommend = true; // 直接推荐，合并流程
 
     if (shouldRecommend) {
     // 推荐牌组和牌阵

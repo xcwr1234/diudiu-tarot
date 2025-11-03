@@ -43,8 +43,16 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     };
   }, []);
 
+  useEffect(() => {
+    // Apply theme to document
+    if (theme) {
+      document.documentElement.classList.remove("dark", "light");
+      document.documentElement.classList.add(theme);
+    }
+  }, [theme]);
+
   return (
-    <NextThemesProvider forcedTheme={theme} {...props}>
+    <NextThemesProvider {...props} defaultTheme="dark">
       {children}
 
       <Toaster position="top-center" richColors />

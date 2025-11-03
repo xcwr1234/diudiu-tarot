@@ -28,61 +28,139 @@ export default function TarotHero({ hero }: TarotHeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-indigo-900 to-black overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-indigo-900 to-black overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
       {/* 塔罗牌装饰元素 */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-16 h-24 bg-gradient-to-b from-gold-400 to-gold-600 rounded-lg transform rotate-12 shadow-2xl"></div>
         <div className="absolute top-20 right-20 w-16 h-24 bg-gradient-to-b from-purple-400 to-purple-600 rounded-lg transform -rotate-12 shadow-2xl"></div>
         <div className="absolute bottom-20 left-1/4 w-16 h-24 bg-gradient-to-b from-indigo-400 to-indigo-600 rounded-lg transform rotate-6 shadow-2xl"></div>
         <div className="absolute bottom-10 right-1/4 w-16 h-24 bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-lg transform -rotate-6 shadow-2xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
+      {/* 神秘符号装饰 */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-1/4 left-1/4 text-6xl opacity-20"
+        >
+          ✨
+        </motion.div>
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute bottom-1/4 right-1/4 text-5xl opacity-20"
+        >
+          🔮
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/3 right-1/3 text-4xl"
+        >
+          🌙
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-1/3 left-1/3 text-4xl"
+        >
+          ⭐
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 py-16 text-center">
         {/* 公告横幅 */}
         {hero.announcement && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-6"
           >
-            <Badge variant="secondary" className="mb-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+            <Badge variant="secondary" className="mb-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
               {hero.announcement.label}
             </Badge>
-            <div className="text-lg font-medium text-purple-200">
+            <div className="text-base font-medium text-purple-200">
               {hero.announcement.title}
             </div>
           </motion.div>
         )}
 
         {/* 主标题 */}
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-300 via-purple-200 to-gray-300 bg-clip-text text-transparent drop-shadow-2xl text-blend relative"
+          className="relative"
         >
-          {hero.title || "Tarot Wisdom"}
-          {hero.highlight_text && (
-            <span className="text-gold-400"> {hero.highlight_text}</span>
-          )}
-        </motion.h1>
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 text-4xl md:text-5xl opacity-60"
+          >
+            🔮
+          </motion.div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-300 via-purple-200 to-gray-300 bg-clip-text text-transparent drop-shadow-2xl text-blend relative inline-block">
+            {hero.title || "Tarot Wisdom"}
+            {hero.highlight_text && (
+              <span className="text-gold-400"> {hero.highlight_text}</span>
+            )}
+          </h1>
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 text-4xl md:text-5xl opacity-60"
+          >
+            ✨
+          </motion.div>
+        </motion.div>
 
         {/* 描述 */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: hero.description || "" }}
-        />
+        {hero.description && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: hero.description }}
+          />
+        )}
 
         {/* 提示信息 */}
         {hero.tip && (
@@ -98,7 +176,7 @@ export default function TarotHero({ hero }: TarotHeroProps) {
           </motion.div>
         )}
 
-        {/* 主占卜按钮 - 智能推荐 */}
+        {/* 占卜按钮组 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -106,79 +184,80 @@ export default function TarotHero({ hero }: TarotHeroProps) {
             duration: 0.4, 
             delay: 0.2
           }}
-          className="mb-8"
+          className="mb-6"
         >
-          <motion.div
-            whileHover={{ scale: 1.05, y: -4 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Button
-              size="lg"
-              className="relative group px-12 py-8 text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 hover:from-purple-700 hover:via-pink-700 hover:to-indigo-700 text-white border-0 rounded-2xl shadow-2xl hover:shadow-purple-500/50 transition-colors duration-200"
-              asChild
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+            {/* 智能占卜按钮 */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
             >
-              <a href="/smart-tarot">
-                <span className="relative z-10 flex items-center gap-3">
-                  <RiMagicLine className="h-8 w-8" />
-                  智能占卜
-                  <RiEyeLine className="h-8 w-8" />
-                </span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all duration-200"></div>
-              </a>
-            </Button>
-          </motion.div>
+              <Button
+                size="lg"
+                className="relative group px-12 py-8 text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 hover:from-purple-700 hover:via-pink-700 hover:to-indigo-700 text-white border-0 rounded-2xl shadow-2xl hover:shadow-purple-500/50 transition-colors duration-200"
+                asChild
+              >
+                <a href="/smart-tarot">
+                  <span className="relative z-10 flex items-center gap-3">
+                    <RiMagicLine className="h-8 w-8" />
+                    智能占卜
+                    <RiEyeLine className="h-8 w-8" />
+                  </span>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all duration-200"></div>
+                </a>
+              </Button>
+            </motion.div>
+
+            {/* 对话式占卜按钮 */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
+            >
+              <Button
+                size="lg"
+                className="relative group px-12 py-8 text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 hover:from-purple-700 hover:via-pink-700 hover:to-indigo-700 text-white border-0 rounded-2xl shadow-2xl hover:shadow-purple-500/50 transition-colors duration-200"
+                asChild
+              >
+                <a href="/tarot?mode=chat">
+                  <span className="relative z-10 flex items-center gap-3">
+                    <RiHeartLine className="h-8 w-8" />
+                    对话式占卜
+                    <RiEyeLine className="h-8 w-8" />
+                  </span>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all duration-200"></div>
+                </a>
+              </Button>
+            </motion.div>
+          </div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-4 text-sm text-purple-300"
+            className="mt-4 text-base text-purple-300 text-center"
           >
-            🐕 丢丢为你推荐最适合的牌阵 ✨
+            🐕 丢丢陪你探索神秘的塔罗世界 ✨
           </motion.p>
         </motion.div>
 
-        {/* 传统占卜按钮 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ 
-            duration: 0.4, 
-            delay: 0.4
-          }}
-          className="mb-8"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05, y: -4 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Button
-              size="lg"
-              variant="outline"
-              className="relative group px-8 py-4 text-lg font-medium border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-black transition-colors duration-200"
-              asChild
+        {/* 装饰性分隔线 */}
+        {hero.show_happy_users && (
+          <div className="flex items-center justify-center gap-4 my-6">
+            <div className="h-px w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-2xl"
             >
-              <a href="/tarot?mode=chat">
-                <span className="relative z-10 flex items-center gap-2">
-                  <RiHeartLine className="h-5 w-5" />
-                  对话式占卜
-                </span>
-              </a>
-            </Button>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="mt-2 text-xs text-gray-400"
-          >
-            与丢丢一对一深度交流
-          </motion.p>
-        </motion.div>
+              🌟
+            </motion.div>
+            <div className="h-px w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+          </div>
+        )}
 
-        {/* 按钮组 */}
-        <motion.div
+        {/* 按钮组 - 已移除 */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -205,7 +284,7 @@ export default function TarotHero({ hero }: TarotHeroProps) {
               </Button>
             );
           })}
-        </motion.div>
+        </motion.div> */}
 
         {/* 用户统计 */}
         {hero.show_happy_users && (
@@ -213,25 +292,25 @@ export default function TarotHero({ hero }: TarotHeroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 text-gray-400"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-400"
           >
             <div className="flex items-center gap-2">
               <RiHeartLine className="h-5 w-5 text-red-400" />
-              <span className="text-lg">10,000+ Souls Guided</span>
+              <span className="text-base">💝 陪伴万千灵魂</span>
             </div>
             <div className="flex items-center gap-2">
               <RiEyeLine className="h-5 w-5 text-blue-400" />
-              <span className="text-lg">78 Sacred Cards</span>
+              <span className="text-base">🃏 七十八张神牌</span>
             </div>
             <div className="flex items-center gap-2">
               <RiMagicLine className="h-5 w-5 text-purple-400" />
-              <span className="text-lg">4 Esoteric Traditions</span>
+              <span className="text-base">🔮 四大秘传体系</span>
             </div>
           </motion.div>
         )}
       </div>
 
-      {/* 浮动塔罗牌 */}
+      {/* 浮动塔罗牌装饰 */}
       <motion.div
         animate={{
           y: [0, -10, 0],
@@ -246,6 +325,38 @@ export default function TarotHero({ hero }: TarotHeroProps) {
       >
         <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs">
           🜁
+        </div>
+      </motion.div>
+      <motion.div
+        animate={{
+          y: [0, 15, 0],
+          rotate: [0, -5, 0],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/4 right-5 w-16 h-24 bg-gradient-to-b from-purple-400 to-pink-600 rounded-lg shadow-2xl opacity-50"
+      >
+        <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs">
+          🜂
+        </div>
+      </motion.div>
+      <motion.div
+        animate={{
+          y: [0, -15, 0],
+          rotate: [0, 5, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-1/3 left-5 w-14 h-20 bg-gradient-to-b from-indigo-400 to-cyan-600 rounded-lg shadow-2xl opacity-50"
+      >
+        <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs">
+          🜃
         </div>
       </motion.div>
     </section>

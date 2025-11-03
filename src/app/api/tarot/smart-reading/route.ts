@@ -1,6 +1,6 @@
 import { respData, respErr } from "@/lib/resp";
 import { performTarotReading, generateInterpretation } from "@/services/tarot";
-import { DeckType, SpreadType } from "@/models/tarot";
+import { DeckType, SpreadType } from "@/types/tarot";
 import OpenAI from "openai";
 
 // Initialize DeepSeek client
@@ -144,4 +144,9 @@ export async function POST(req: Request) {
     return respErr("智能推荐失败");
   }
 }
+
+
+
+
+
 

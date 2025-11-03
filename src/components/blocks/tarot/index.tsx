@@ -11,6 +11,7 @@ import { RiMagicLine, RiEyeLine, RiRefreshLine, RiHeartLine } from "react-icons/
 import { useTranslations, useLocale } from "next-intl";
 import AnimationToast from "@/components/ui/animation-toast";
 import Typewriter from "@/components/ui/typewriter";
+import { SpreadType } from "@/types/tarot";
 
 interface TarotCard {
   id: number;
@@ -82,6 +83,28 @@ function getLocalCardImage(cardName: string): string | null {
   }
   
   return null;
+}
+
+// 将字符串转换为SpreadType枚举
+function getSpreadTypeEnum(spreadType: string): SpreadType {
+  return spreadType as SpreadType;
+}
+
+// 获取牌阵位置的中文描述
+function getCardPositionZh(spreadType: SpreadType, index: number): string {
+  const positions: { [key in SpreadType]?: string[] } = {
+    [SpreadType.ThreeCardTime]: ["过去", "现在", "未来"],
+    [SpreadType.CelticCross]: ["现在", "挑战", "过去", "未来", "上方", "下方", "建议", "外界影响", "希望/恐惧", "结果"],
+    [SpreadType.LoveRelationship]: ["你的感受", "TA的感受", "关系状态", "挑战", "潜在发展", "最终趋势"],
+    [SpreadType.CareerPath]: ["当前工作状态", "你的优势", "需要改进", "潜在机会", "长期建议"],
+    [SpreadType.Healing]: ["痛苦根源", "疗愈障碍", "可用资源", "疗愈状态"],
+    [SpreadType.SeasonalForecast]: ["春季", "夏季", "秋季", "冬季"],
+    [SpreadType.TwoPaths]: ["选项A-优势", "选项A-劣势", "选项A-结果", "选项B-优势", "选项B-劣势", "选项B-结果"],
+    [SpreadType.DreamInterpretation]: ["表面含义", "隐藏信息", "个人启示"],
+    [SpreadType.MoneyFlow]: ["当前财务状况", "收入来源", "支出问题", "潜在机会", "长期建议"],
+  };
+  
+  return positions[spreadType]?.[index] || `位置 ${index + 1}`;
 }
 
 export default function TarotReading() {
@@ -513,6 +536,7 @@ export default function TarotReading() {
                               </div>
                               
                               <div className="space-y-2">
+                                <p className="text-sm text-purple-300 font-semibold">{getCardPositionZh(getSpreadTypeEnum(reading.spread_type), index)}</p>
                                 <h4 className="font-semibold text-purple-200">{t(`card_names.${card.card_name}`) || card.card_name}</h4>
                                 {card.suit && (
                                   <p className="text-sm text-gray-400">

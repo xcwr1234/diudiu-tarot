@@ -248,7 +248,7 @@ export default function TarotChat() {
           </div>
           <div>
             <h2 className="text-lg font-semibold text-purple-200">
-              {locale === "zh" ? "月影塔罗师" : "Moon Shadow Tarot"}
+              {locale === "zh" ? "丢丢" : "DiuDiu"}
             </h2>
             <p className="text-xs text-gray-400">
               {locale === "zh" ? "在线" : "Online"}

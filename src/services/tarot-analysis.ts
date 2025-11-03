@@ -1,5 +1,4 @@
-import { DeckType, SpreadType } from "@/models/tarot";
-import { TarotCard } from "./tarot";
+import { DeckType, SpreadType, TarotCard } from "@/types/tarot";
 
 export { DeckType, SpreadType };
 

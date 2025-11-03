@@ -1,31 +1,9 @@
-import { DeckType, SpreadType, insertTarotReading, getRandomTarotCards } from "@/models/tarot";
+import { DeckType, SpreadType, TarotCard, TarotReading } from "@/types/tarot";
+import { insertTarotReading, getRandomTarotCards } from "@/models/tarot";
 import { getUuid } from "@/lib/hash";
 import { getIsoTimestr } from "@/lib/time";
 import { getUserUuid } from "./user";
 import OpenAI from "openai";
-
-export interface TarotCard {
-  id: number;
-  card_name: string;
-  card_number: number | null;
-  suit: string | null;
-  arcana_type: string | null;
-  upright_meaning: string | null;
-  reversed_meaning: string | null;
-  keywords: string | null;
-  image_url: string | null;
-  is_reversed: boolean;
-}
-
-export interface TarotReading {
-  uuid: string;
-  deck_type: DeckType;
-  spread_type: SpreadType;
-  question: string;
-  cards_drawn: TarotCard[];
-  interpretation: string;
-  created_at: string;
-}
 
 export async function performTarotReading(
   deck_type: DeckType,
@@ -888,7 +866,7 @@ function getSpreadTypeName(spread_type: SpreadType): string {
   }
 }
 
-function getCardPosition(spread_type: SpreadType, index: number): string {
+export function getCardPosition(spread_type: SpreadType, index: number): string {
   switch (spread_type) {
     // 马赛塔罗
     case SpreadType.ThreeCardTime:

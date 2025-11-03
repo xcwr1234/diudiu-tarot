@@ -16,16 +16,6 @@
           "title": "About DiuDiu",
           "url": "/about",
           "icon": "RiInformationLine"
-        },
-        {
-          "title": "Divination",
-          "url": "/divination",
-          "icon": "RiMagicLine"
-        },
-        {
-          "title": "Hermetic Wisdom",
-          "url": "/hermetic",
-          "icon": "RiScales3Line"
         }
       ]
     },
@@ -44,14 +34,11 @@
   },
   "hero": {
     "title": "DiuDiu Tarot",
-    "highlight_text": "DiuDiu Tarot",
-    "description": "Pierce the veil of 78 cards to reveal hidden paths of destiny.<br/>Blending Marseille tradition, Golden Dawn system and Crowley's Thoth wisdom.",
     "announcement": {
       "label": "2025",
       "title": "🜁 Year of Air Signs",
       "url": "/#divination"
     },
-    "tip": "🜄 Mercury Retrograde Special Reading",
     "buttons": [
       {
         "title": "Begin Reading",

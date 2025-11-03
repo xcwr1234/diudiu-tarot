@@ -1,6 +1,6 @@
 import { respData, respErr } from "@/lib/resp";
 import { performTarotReading, generateInterpretation } from "@/services/tarot";
-import { DeckType, SpreadType } from "@/models/tarot";
+import { DeckType, SpreadType } from "@/types/tarot";
 
 export async function POST(req: Request) {
   try {
@@ -99,4 +99,9 @@ export async function POST(req: Request) {
     return respErr("占卜执行失败");
   }
 }
+
+
+
+
+
 

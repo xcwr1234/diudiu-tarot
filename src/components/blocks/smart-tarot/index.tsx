@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RiMagicLine, RiRefreshLine, RiHeartLine } from "react-icons/ri";
 import { useTranslations, useLocale } from "next-intl";
 import Typewriter from "@/components/ui/typewriter";
+import { SpreadType } from "@/types/tarot";
 
 interface TarotCard {
   id: number;
@@ -84,6 +85,28 @@ function getLocalCardImage(cardName: string): string | null {
   }
   
   return null;
+}
+
+// 将字符串转换为SpreadType枚举
+function getSpreadTypeEnum(spreadType: string): SpreadType {
+  return spreadType as SpreadType;
+}
+
+// 获取牌阵位置的中文描述
+function getCardPositionZh(spreadType: SpreadType, index: number): string {
+  const positions: { [key in SpreadType]?: string[] } = {
+    [SpreadType.ThreeCardTime]: ["过去", "现在", "未来"],
+    [SpreadType.CelticCross]: ["现在", "挑战", "过去", "未来", "上方", "下方", "建议", "外界影响", "希望/恐惧", "结果"],
+    [SpreadType.LoveRelationship]: ["你的感受", "TA的感受", "关系状态", "挑战", "潜在发展", "最终趋势"],
+    [SpreadType.CareerPath]: ["当前工作状态", "你的优势", "需要改进", "潜在机会", "长期建议"],
+    [SpreadType.Healing]: ["痛苦根源", "疗愈障碍", "可用资源", "疗愈状态"],
+    [SpreadType.SeasonalForecast]: ["春季", "夏季", "秋季", "冬季"],
+    [SpreadType.TwoPaths]: ["选项A-优势", "选项A-劣势", "选项A-结果", "选项B-优势", "选项B-劣势", "选项B-结果"],
+    [SpreadType.DreamInterpretation]: ["表面含义", "隐藏信息", "个人启示"],
+    [SpreadType.MoneyFlow]: ["当前财务状况", "收入来源", "支出问题", "潜在机会", "长期建议"],
+  };
+  
+  return positions[spreadType]?.[index] || `位置 ${index + 1}`;
 }
 
 export default function SmartTarotReading() {
@@ -248,25 +271,15 @@ export default function SmartTarotReading() {
                       />
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="bg-blue-900/20 rounded-lg p-4 border border-blue-700/30">
-                        <h4 className="font-semibold text-blue-300 mb-2">推荐牌组</h4>
-                        <Badge className="bg-blue-600 text-white">
-                          {recommendation.suggestedDeck === 'waite' ? '维特塔罗' : 
-                           recommendation.suggestedDeck === 'marseille' ? '马赛塔罗' :
-                           recommendation.suggestedDeck === 'thoth' ? '透特塔罗' : '黄金黎明'}
-                        </Badge>
-                      </div>
-                      <div className="bg-green-900/20 rounded-lg p-4 border border-green-700/30">
-                        <h4 className="font-semibold text-green-300 mb-2">推荐牌阵</h4>
-                        <Badge className="bg-green-600 text-white">
-                          {recommendation.suggestedSpread === 'celtic_cross' ? '凯尔特十字' :
-                           recommendation.suggestedSpread === 'three_card_time' ? '三牌时间流' :
-                           recommendation.suggestedSpread === 'love_relationship' ? '关系深度阵' :
-                           recommendation.suggestedSpread === 'career_path' ? '职业路径阵' :
-                           recommendation.suggestedSpread === 'healing' ? '心灵疗愈阵' : '其他牌阵'}
-                        </Badge>
-                      </div>
+                    <div className="bg-green-900/20 rounded-lg p-4 border border-green-700/30">
+                      <h4 className="font-semibold text-green-300 mb-2">推荐牌阵</h4>
+                      <Badge className="bg-green-600 text-white">
+                        {recommendation.suggestedSpread === 'celtic_cross' ? '凯尔特十字' :
+                         recommendation.suggestedSpread === 'three_card_time' ? '三牌时间流' :
+                         recommendation.suggestedSpread === 'love_relationship' ? '关系深度阵' :
+                         recommendation.suggestedSpread === 'career_path' ? '职业路径阵' :
+                         recommendation.suggestedSpread === 'healing' ? '心灵疗愈阵' : '其他牌阵'}
+                      </Badge>
                     </div>
 
                     <div className="flex gap-4">
@@ -358,7 +371,10 @@ export default function SmartTarotReading() {
                                 </div>
                               </div>
                               <div className="mt-2">
-                                <p className="text-xs text-gray-300">
+                                <p className="text-xs text-gray-300 font-semibold mb-1">
+                                  {getCardPositionZh(getSpreadTypeEnum(reading.spread_type), index)}
+                                </p>
+                                <p className="text-xs text-gray-400">
                                   {revealedCards.includes(index) ? (t(`card_names.${card.card_name}`) || card.card_name) : "点击翻牌"}
                                 </p>
                                 {revealedCards.includes(index) && (

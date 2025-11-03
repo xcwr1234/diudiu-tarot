@@ -4,3 +4,10 @@ export default function SmartTarotPage() {
   return <SmartTarotReading />;
 }
 
+
+
+
+
+
+
+
